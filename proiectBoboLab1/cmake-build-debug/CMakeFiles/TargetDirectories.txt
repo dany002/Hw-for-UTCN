@@ -1,0 +1,3 @@
+/home/senzationall/Desktop/proiectBoboLab1/cmake-build-debug/CMakeFiles/proiectBoboLab1.dir
+/home/senzationall/Desktop/proiectBoboLab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/senzationall/Desktop/proiectBoboLab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

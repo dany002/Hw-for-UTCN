@@ -1,0 +1,21 @@
+# ninja log v5
+1	23	1680600916559056234	CMakeFiles/proiectBoboLab1.dir/SetIterator.cpp.o	f21294dd4ea6fe10
+1	30	1680600916563056153	CMakeFiles/proiectBoboLab1.dir/ShortTest.cpp.o	d968055674698122
+0	191	1680600916727052793	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+1	207	1680600916743052464	CMakeFiles/proiectBoboLab1.dir/ExtendedTest.cpp.o	476021b88ba57378
+0	202	1680600934722730712	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+0	173	1680601053428890546	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+0	12	1680601071024661949	CMakeFiles/proiectBoboLab1.dir/Set.cpp.o	27451c287dd2a37f
+12	45	1680601071056661543	proiectBoboLab1	8f613bd6e0d3e461
+0	158	1680601084036498458	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+158	190	1680601084068498061	proiectBoboLab1	8f613bd6e0d3e461
+0	168	1680601090088423739	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+168	201	1680601090120423346	proiectBoboLab1	8f613bd6e0d3e461
+1	20	1680603431836489346	CMakeFiles/proiectBoboLab1.dir/Set.cpp.o	27451c287dd2a37f
+1	23	1680603431840489314	CMakeFiles/proiectBoboLab1.dir/ShortTest.cpp.o	d968055674698122
+1	42	1680603431856489187	CMakeFiles/proiectBoboLab1.dir/SetIterator.cpp.o	f21294dd4ea6fe10
+0	178	1680603431992488105	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+1	193	1680603432008487978	CMakeFiles/proiectBoboLab1.dir/ExtendedTest.cpp.o	476021b88ba57378
+193	226	1680603432040487723	proiectBoboLab1	8f613bd6e0d3e461
+0	160	1680603438832433699	CMakeFiles/proiectBoboLab1.dir/App.cpp.o	b64eeaf173c85425
+160	197	1680603438868433412	proiectBoboLab1	8f613bd6e0d3e461
