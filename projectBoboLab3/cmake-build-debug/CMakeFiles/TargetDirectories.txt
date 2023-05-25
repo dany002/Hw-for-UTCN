@@ -1,0 +1,3 @@
+/home/senzationall/Desktop/Hw-for-UTCN/projectBoboLab3/cmake-build-debug/CMakeFiles/projectBoboLab3.dir
+/home/senzationall/Desktop/Hw-for-UTCN/projectBoboLab3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/senzationall/Desktop/Hw-for-UTCN/projectBoboLab3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
