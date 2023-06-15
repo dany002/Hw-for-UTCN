@@ -30,13 +30,13 @@ void SetIterator::next() {
         if (set.hashtable[currentIndex].next != -1) {
             currentIndex = set.hashtable[currentIndex].next;
         } else {
-            // Otherwise, move to the next non-empty slot (if any)
+            // Otherwise, find the next non-empty slot
             int nextSlot = currentSlot + 1;
             while (nextSlot < set.slots.size() && set.slots[nextSlot] == -1) {
                 nextSlot++;
             }
 
-            // Set the iterator to the next element in the next slot (if any)
+            // Set the iterator to the first element in the next non-empty slot (if any)
             if (nextSlot < set.slots.size()) {
                 currentSlot = nextSlot;
                 currentIndex = set.slots[nextSlot];
@@ -45,8 +45,11 @@ void SetIterator::next() {
                 currentIndex = -1;
             }
         }
+    } else {
+        // Iterator is not valid, no action needed
     }
 }
+
 
 TElem SetIterator::getCurrent() {
     // Return the current element

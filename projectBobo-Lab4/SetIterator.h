@@ -12,7 +12,6 @@ private:
 
 	//TODO - Representation
 
-    int position;
     int currentSlot;   // Current slot index in the set's slots vector
     int currentIndex;  // Current index in the set's hashtable
 

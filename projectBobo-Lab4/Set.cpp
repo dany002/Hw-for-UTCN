@@ -4,18 +4,18 @@
 
 Set::Set() {
     // Initialize the hashtable and slots
-    hashtable.resize(10, Node(NULL_TELEM, -1));
-    slots.resize(10, -1);  // Initialize all slots as empty (-1)
+    hashtable.resize(5000, Node(NULL_TELEM, -1));
+    slots.resize(5000, -1);  // Initialize all slots as empty (-1)
     size_ = 0;
 }
 
 bool Set::add(TElem elem) {
-    // Compute the hash value of the element
-    int hash = hashFunction(elem);
-
     // Check if the element already exists in the set
     if (search(elem))
         return false;
+
+    // Compute the hash value of the element
+    int hash = hashFunction(elem);
 
     // Create a new node with the element
     Node newNode(elem, -1);
@@ -28,7 +28,8 @@ bool Set::add(TElem elem) {
         int index = slots[slot];
         while (hashtable[index].next != -1)
             index = hashtable[index].next;
-        hashtable[index].next = hashtable.size();
+        newNode.next = hashtable.size();
+        hashtable[index].next = newNode.next;
     }
 
     // Add the node to the hashtable and increment the size
@@ -38,6 +39,7 @@ bool Set::add(TElem elem) {
     return true;
 }
 
+
 bool Set::remove(TElem elem) {
     // Compute the hash value of the element
     int hash = hashFunction(elem);
@@ -46,60 +48,35 @@ bool Set::remove(TElem elem) {
     if (!search(elem))
         return false;
 
-    // Find the node to remove
+    // Find the slot in the hash table
     int slot = hash;
-    int index = slots[slot];
     int prevIndex = -1;
-    while (index != -1 && hashtable[index].element != elem) {
-        prevIndex = index;
-        index = hashtable[index].next;
+    int currIndex = slots[slot];
+
+    // Traverse the linked list to find the node to remove
+    while (currIndex != -1 && hashtable[currIndex].element != elem) {
+        prevIndex = currIndex;
+        currIndex = hashtable[currIndex].next;
     }
 
-    // Remove the node from the hashtable and update the slots
+    // Remove the node from the linked list
     if (prevIndex == -1) {
-        slots[slot] = hashtable[index].next;
+        slots[slot] = hashtable[currIndex].next;
     } else {
-        hashtable[prevIndex].next = hashtable[index].next;
+        hashtable[prevIndex].next = hashtable[currIndex].next;
     }
 
-    // If the removed node is not the last node, update the next pointers
-    if (index != size_ - 1) {
-        int lastIndex = size_ - 1;
-        int lastSlot = hashFunction(hashtable[lastIndex].element);
+    // Mark the removed node as deleted
+    hashtable[currIndex].element = NULL_TELEM;
+    hashtable[currIndex].next = -1;
 
-        // Find the previous node of the last node
-        int prevLastIndex = -1;
-        int currIndex = slots[lastSlot];
-        while (currIndex != lastIndex) {
-            prevLastIndex = currIndex;
-            currIndex = hashtable[currIndex].next;
-        }
-
-        // Update the next pointer of the previous node
-        if (prevLastIndex == -1) {
-            slots[lastSlot] = index;
-        } else {
-            hashtable[prevLastIndex].next = index;
-        }
-
-        // Update the next pointer of the removed node
-        hashtable[index].next = hashtable[lastIndex].next;
-
-        // Copy the last node to the removed node's position
-        hashtable[index].element = hashtable[lastIndex].element;
-
-        // Update the next pointer of the node that was swapped with the removed node
-        if (hashtable[index].next != -1) {
-            int nextIndex = hashtable[index].next;
-            hashtable[nextIndex].next = index;
-        }
-    }
-
-    // Decrease the size
+    // Update the size
     size_--;
 
     return true;
 }
+
+
 
 
 

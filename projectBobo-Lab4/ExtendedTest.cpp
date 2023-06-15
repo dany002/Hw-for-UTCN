@@ -46,23 +46,31 @@ void testCreate() {
 
 void testAdd() {
 	cout << "Test add" << endl;
+
 	Set s; //adaugam elemente [0, 10)
+    cout << "HI";
 	for (int i = 0; i < 10; i++) {
+
 		s.add(i);
 	}
 	//printM(m);
+    cout << "HI";
 	assert(s.isEmpty() == false);
 	assert(s.size() == 10);
 	for (int i = -10; i < 20; i++) { //add more elements [-10, 20)
 		s.add(i);
 	}
-	//printM(m);
+    cout << "HI";
+
+    //printM(m);
 	assert(s.isEmpty() == false);
 	assert(s.size() == 30);
 	for (int i = -100; i < 100; i++) { //add more elements [-100, 100)
 		s.add(i);
 	}
-	//printM(m);
+    cout << "HI";
+
+    //printM(m);
 	assert(s.isEmpty() == false);
 	assert(s.size() == 200);
 	for (int i = -200; i < 200; i++) {
@@ -79,11 +87,15 @@ void testAdd() {
 			assert(s.search(i) == false);
 		}
 	}
-	testIteratorSteps(s);
+    cout << "HI";
+
+    testIteratorSteps(s);
 	for (int i = 10000; i > -10000; i--) { //add larger values first
 		s.add(i);
 	}
-	testIteratorSteps(s);
+    cout << "HI";
+
+    testIteratorSteps(s);
 	assert(s.size()==20000);
 }
 
